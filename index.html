@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByTON DApp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>ByTON DApp</h1>
+    
+    <!-- Wallet Connection Section -->
+    <div class="section">
+      <h2>Wallet</h2>
+      <button onclick="connectWallet()">Connect Wallet</button>
+      <p id="walletAddress">Wallet: Not Connected</p>
+    </div>
+
+    <!-- Register User Section -->
+    <div class="section">
+      <h2>Register User</h2>
+      <input type="text" id="userName" placeholder="Enter Username">
+      <input type="number" id="userUID" placeholder="Enter UID">
+      <button onclick="registerUser(document.getElementById('userName').value, document.getElementById('userUID').value)">Register</button>
+    </div>
+
+    <!-- Airdrop Section -->
+    <div class="section">
+      <h2>Airdrop</h2>
+      <button onclick="claimAirdrop()">Claim Airdrop</button>
+    </div>
+
+    <!-- Click Section -->
+    <div class="section">
+      <h2>Click to Earn</h2>
+      <!-- Menggunakan gambar sebagai tombol -->
+      <img src="file-g32Fk2tc9SheQhocc55kI594.png" alt="Click to Earn" onclick="click()" style="cursor: pointer; width: 100px;">
+    </div>
+
+    <!-- Complete Task Section -->
+    <div class="section">
+      <h2>Complete Task</h2>
+      <button onclick="completeTask()">Complete Task</button>
+    </div>
+
+    <!-- Distribution Date Section -->
+    <div class="section">
+      <h2>Distribution Date</h2>
+      <p id="distributionDate">01-01-2025</p>
+    </div>
+
+    <!-- Top 100 Users Section -->
+    <div class="section">
+      <h2>Top 100 Users</h2>
+      <button onclick="getTopUsers()">View Top Users</button>
+      <pre id="topUsers"></pre>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
