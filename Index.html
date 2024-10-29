@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByTONToken DApp</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <h1>ByTONToken DApp</h1>
+
+  <!-- Section for Register User -->
+  <div id="user-section">
+    <h3>1. Register User</h3>
+    <input type="text" id="userName" placeholder="Enter Username">
+    <input type="number" id="uid" placeholder="Enter UID">
+    <button onclick="registerUser()">Register</button>
+  </div>
+
+  <!-- Section for Connect Wallet -->
+  <div id="wallet-section">
+    <h3>2. Tambahkan Wallet</h3>
+    <button onclick="connectWallet()">Connect Wallet</button>
+  </div>
+
+  <!-- Section for Claim Airdrop -->
+  <div id="airdrop-section">
+    <h3>3. Klaim Airdrop</h3>
+    <button onclick="claimAirdrop()">Claim Airdrop</button>
+  </div>
+
+  <!-- Section for Click Button -->
+  <div id="click-section">
+    <h3>4. Click Button</h3>
+    <button onclick="clickButton()">Click & Earn</button>
+  </div>
+
+  <!-- Section for Completed Task -->
+  <div id="task-section">
+    <h3>5. Completed Task</h3>
+    <button onclick="completeTask()">Complete Task</button>
+  </div>
+
+  <!-- Section for Distribution Date -->
+  <div id="distribution-date">
+    <h3>6. Tanggal Distribusi</h3>
+    <p>Distribusi Airdrop: <strong>01-01-2025</strong></p>
+  </div>
+
+  <!-- Section for Top 100 Users -->
+  <div id="ranking-section">
+    <h3>7. Ranking 1-100 Teratas</h3>
+    <button onclick="getTopUsers()">View Top 100</button>
+    <ul id="topUsers"></ul>
+  </div>
+
+  <p id="status"></p>
+</body>
+</html>
