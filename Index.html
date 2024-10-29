@@ -3,59 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ByTONToken DApp</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
-  <script src="app.js" defer></script>
+  <title>ByTON DApp</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f4f6f9;
+    }
+    .container {
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      text-align: center;
+    }
+    h2 {
+      color: #333333;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px 0;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    input {
+      width: 80%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .section {
+      margin-top: 20px;
+    }
+    #topUsers {
+      white-space: pre-line;
+      text-align: left;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 4px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    #walletAddress, #distributionDate {
+      color: #333;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h1>ByTONToken DApp</h1>
 
-  <!-- Section for Register User -->
-  <div id="user-section">
-    <h3>1. Register User</h3>
-    <input type="text" id="userName" placeholder="Enter Username">
-    <input type="number" id="uid" placeholder="Enter UID">
-    <button onclick="registerUser()">Register</button>
+  <div class="container">
+    <h2>ByTON DApp</h2>
+    
+    <!-- Wallet Connection Section -->
+    <div class="section">
+      <button onclick="connectWallet()">Connect Wallet</button>
+      <p id="walletAddress">Wallet: Not Connected</p>
+    </div>
+
+    <!-- Register User Section -->
+    <div class="section">
+      <h3>Register User</h3>
+      <input type="text" id="userName" placeholder="Enter Username">
+      <input type="number" id="userUID" placeholder="Enter UID">
+      <button onclick="registerUser(document.getElementById('userName').value, document.getElementById('userUID').value)">Register</button>
+    </div>
+
+    <!-- Airdrop Section -->
+    <div class="section">
+      <h3>Airdrop</h3>
+      <button onclick="claimAirdrop()">Claim Airdrop</button>
+    </div>
+
+    <!-- Click Section -->
+    <div class="section">
+      <h3>Click Button</h3>
+      <button onclick="click()">Click to Earn</button>
+    </div>
+
+    <!-- Complete Task Section -->
+    <div class="section">
+      <h3>Complete Task</h3>
+      <button onclick="completeTask()">Complete Task</button>
+    </div>
+
+    <!-- Distribution Date Section -->
+    <div class="section">
+      <h3>Distribution Date</h3>
+      <p id="distributionDate">Loading distribution date...</p>
+    </div>
+
+    <!-- Top 100 Users Section -->
+    <div class="section">
+      <h3>Top 100 Users</h3>
+      <button onclick="getTopUsers()">View Top Users</button>
+      <pre id="topUsers"></pre>
+    </div>
   </div>
 
-  <!-- Section for Connect Wallet -->
-  <div id="wallet-section">
-    <h3>2. Tambahkan Wallet</h3>
-    <button onclick="connectWallet()">Connect Wallet</button>
-  </div>
-
-  <!-- Section for Claim Airdrop -->
-  <div id="airdrop-section">
-    <h3>3. Klaim Airdrop</h3>
-    <button onclick="claimAirdrop()">Claim Airdrop</button>
-  </div>
-
-  <!-- Section for Click Button -->
-  <div id="click-section">
-    <h3>4. Click Button</h3>
-    <button onclick="clickButton()">Click & Earn</button>
-  </div>
-
-  <!-- Section for Completed Task -->
-  <div id="task-section">
-    <h3>5. Completed Task</h3>
-    <button onclick="completeTask()">Complete Task</button>
-  </div>
-
-  <!-- Section for Distribution Date -->
-  <div id="distribution-date">
-    <h3>6. Tanggal Distribusi</h3>
-    <p>Distribusi Airdrop: <strong>01-01-2025</strong></p>
-  </div>
-
-  <!-- Section for Top 100 Users -->
-  <div id="ranking-section">
-    <h3>7. Ranking 1-100 Teratas</h3>
-    <button onclick="getTopUsers()">View Top 100</button>
-    <ul id="topUsers"></ul>
-  </div>
-
-  <p id="status"></p>
+  <!-- Include Web3.js and app.js -->
+  <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
