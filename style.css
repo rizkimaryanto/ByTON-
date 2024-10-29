@@ -1,63 +1,55 @@
-/* style.css */
-
+/* General styling */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
-.container {
-  width: 90%;
-  max-width: 600px;
-  padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+header {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 1em;
   text-align: center;
 }
 
-h1 {
-  color: #333;
+nav {
+  display: flex;
+  gap: 10px;
+  margin-top: 1em;
 }
 
-.section {
-  margin: 20px 0;
-}
-
-button {
+nav button {
   background-color: #4CAF50;
   color: white;
-  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
+  font-size: 1em;
 }
 
-button:hover {
+nav button:hover {
   background-color: #45a049;
 }
 
-input[type="text"], input[type="number"] {
-  padding: 10px;
-  width: calc(100% - 22px);
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* Page Sections */
+.page {
+  display: none;
+  padding: 20px;
+  text-align: center;
 }
 
-#distributionDate, #walletAddress {
-  color: #666;
+button {
+  margin-top: 1em;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
 }
 
-img[alt="Click to Earn"] {
-  transition: transform 0.2s ease;
-}
-
-img[alt="Click to Earn"]:hover {
-  transform: scale(1.1);
+img {
+  cursor: pointer;
+  margin-top: 1em;
 }
